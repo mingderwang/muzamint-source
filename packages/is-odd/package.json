@@ -1,7 +1,10 @@
 {
   "name": "@muzamint/is-odd",
-  "version": "0.0.1",
-  "dependencies": {},
-  "type": "commonjs",
-  "main": "./index.cjs"
+  "version": "1.2.4",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts",
+  "dependencies": {
+    "@muzamint/is-even": "latest"
+  }
 }

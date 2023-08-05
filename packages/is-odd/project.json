@@ -5,20 +5,23 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/esbuild:esbuild",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/is-odd",
-        "main": "packages/is-odd/src/index.ts",
-        "tsConfig": "packages/is-odd/tsconfig.lib.json",
-        "assets": ["packages/is-odd/*.md"],
-        "generatePackageJson": true,
-        "format": ["cjs", "module"]
+        "outputPath": "dist/packages/is-odd"
       }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs is-odd {args.ver} {args.tag}",
       "dependsOn": ["build"]
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/packages/is-odd"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/is-odd"
+      }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
@@ -28,14 +31,6 @@
           "packages/is-odd/**/*.ts",
           "packages/is-odd/package.json"
         ]
-      }
-    },
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/is-odd"],
-      "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/packages/is-odd"
       }
     }
   },
