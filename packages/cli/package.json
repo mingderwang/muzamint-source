@@ -1,6 +1,6 @@
 {
   "name": "@muzamint/cli",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "scripts": {
     "build": "nx run cli:build",
     "watch": "nx run cli:build --watch",

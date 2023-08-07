@@ -13,7 +13,7 @@
         "outputPath": "dist/packages/cli",
         "tsConfig": "packages/cli/tsconfig.lib.json",
         "packageJson": "packages/cli/package.json",
-        "main": "packages/cli/src/cli.ts",
+        "main": "packages/cli/src/index.ts",
         "assets": ["packages/cli/*.md"]
       }
     },

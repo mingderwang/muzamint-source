@@ -4,7 +4,10 @@ This library was generated with [Nx](https://nx.dev).
 
 ## Building
 
-Run `nx build cli` to build the library.
+```sh
+pnpm install
+pnpm exec nx run cli:build
+```
 
 ## Running unit tests
 
