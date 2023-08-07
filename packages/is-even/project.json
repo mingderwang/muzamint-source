@@ -6,18 +6,24 @@
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/packages/is-even"
       }
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs is-even {args.ver} {args.tag}",
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "build"
+      ]
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/is-even"],
+      "outputs": [
+        "coverage/packages/is-even"
+      ],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/is-even"
@@ -25,7 +31,9 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "packages/is-even/**/*.ts",
